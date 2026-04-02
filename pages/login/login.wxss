@@ -1,149 +1,190 @@
 .container {
   min-height: 100vh;
-  padding: 96rpx 48rpx 60rpx;
+  padding: 42rpx 42rpx 68rpx;
   box-sizing: border-box;
-  background: linear-gradient(180deg, #0b1220 0%, #111d31 100%);
+  background: #ffffff;
 }
 
 .hero {
-  margin-top: 56rpx;
+  margin-top: 68rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-  display: inline-block;
-  padding: 10rpx 20rpx;
-  border-radius: 999rpx;
-  background: rgba(62, 203, 255, 0.14);
-  color: #75d6ff;
-  font-size: 24rpx;
-  letter-spacing: 2rpx;
+.logo-img {
+  width: 220rpx;
+  height: 180rpx;
 }
 
 .title {
   display: block;
-  margin-top: 28rpx;
+  margin-top: 18rpx;
   font-size: 52rpx;
   font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 1rpx;
+  color: #1d2a7a;
+}
+
+.welcome {
+  margin-top: 52rpx;
+  color: #98a6d1;
+  font-size: 42rpx;
+  font-weight: 500;
   line-height: 1.35;
 }
 
-.subtitle {
+.register-line {
+  margin-top: 12rpx;
+  font-size: 38rpx;
+  line-height: 1.4;
+}
+
+.register-tip {
+  color: #9aa3d0;
+}
+
+.register-link {
+  color: #ff9937;
+}
+
+.form-card {
+  margin-top: 80rpx;
+  padding: 44rpx 42rpx 48rpx;
+  border: 2rpx solid #eef0ff;
+  border-radius: 54rpx;
+}
+
+.field-label {
   display: block;
-  margin-top: 16rpx;
-  color: #a2b0c5;
-  font-size: 28rpx;
+  color: #26306b;
+  font-size: 34rpx;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
-.card {
-  margin-top: 110rpx;
-  padding: 42rpx 34rpx;
-  border-radius: 24rpx;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
+.password-label {
+  margin-top: 42rpx;
 }
 
-button {
-  border: 0;
+.field-row {
+  margin-top: 24rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 16rpx;
+  border-bottom: 2rpx solid #edf0ff;
 }
 
-.wechat-btn {
-  width: 100%;
+.field-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 18rpx;
+}
+
+.field-input {
+  flex: 1;
+  height: 64rpx;
+  color: #26306b;
+  font-size: 38rpx;
+  line-height: 64rpx;
+  font-weight: 500;
+}
+
+.placeholder {
+  color: #2e3976;
+  opacity: 0.72;
+}
+
+.eye-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 16rpx;
+}
+
+.forgot {
+  margin-top: 36rpx;
+  display: inline-block;
+  color: #ff9a39;
+  font-size: 34rpx;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.login-btn {
+  margin-top: 36rpx;
+  width: calc(100% + 28rpx);
+  margin-left: -14rpx;
+  margin-right: -14rpx;
+  box-sizing: border-box;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-sizing: border-box;
-  padding: 0 24rpx;
   height: 92rpx;
   line-height: 92rpx;
-  border-radius: 46rpx;
-  background: linear-gradient(135deg, #2bd36b 0%, #18b04f 100%);
-  color: #ffffff;
-  font-size: 32rpx;
+  border-radius: 24rpx;
+  background: #ff9937;
+  color: #fff;
+  font-size: 36rpx;
   font-weight: 600;
+  letter-spacing: 2rpx;
+  white-space: nowrap;
 }
 
-.phone-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 0 24rpx;
-  white-space: nowrap;
-  margin-top: 22rpx;
-  height: 86rpx;
-  line-height: 86rpx;
-  border-radius: 43rpx;
-  border: 2rpx solid rgba(255, 255, 255, 0.26);
-  background: transparent;
-  color: #dfebff;
-  font-size: 30rpx;
+.login-btn::after {
+  border: none;
 }
 
 .error-box {
   margin-top: 24rpx;
-  padding: 18rpx 22rpx;
+  padding: 14rpx 18rpx;
   border-radius: 14rpx;
-  background: rgba(255, 82, 82, 0.14);
-  color: #ffc5c5;
-  font-size: 25rpx;
-}
-
-.retry {
-  display: block;
-  margin-top: 8rpx;
-  color: #ffdede;
-  text-decoration: underline;
-}
-
-.protocol {
-  margin-top: 34rpx;
-  color: #90a0bc;
+  background: #fff2ef;
+  color: #d84444;
   font-size: 24rpx;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
-.agree-row {
+.third-party {
+  margin-top: 82rpx;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
 }
 
-.checkbox {
-  width: 32rpx;
-  height: 32rpx;
-  margin-top: 4rpx;
-  margin-right: 14rpx;
-  border: 2rpx solid #90a0bc;
+.line {
+  flex: 1;
+  height: 2rpx;
+  background: #edf0ff;
+}
+
+.third-text {
+  margin: 0 28rpx;
+  color: #a1a9cf;
+  font-size: 30rpx;
+  line-height: 1.4;
+  letter-spacing: 1rpx;
+}
+
+.social-row {
+  margin-top: 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social-btn {
+  width: 118rpx;
+  height: 118rpx;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
-.checked {
-  border-color: #2bd36b;
-  background: rgba(43, 211, 107, 0.2);
-}
-
-.check-mark {
-  color: #2bd36b;
-  font-size: 24rpx;
-  line-height: 1;
-}
-
-.agree-text {
-  text-align: left;
-}
-
-.link {
-  color: #71d2ff;
-}
-
-.wechat-btn[disabled] {
-  background: #4d607d !important;
-  color: #ced7e6 !important;
+.social-icon {
+  width: 118rpx;
+  height: 118rpx;
+  transform-origin: center center;
 }

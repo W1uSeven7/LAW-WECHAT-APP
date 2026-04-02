@@ -1,45 +1,72 @@
 <view class="container">
   <view class="hero">
-    <text class="logo">LAW STUDIO</text>
-    <text class="title">欢迎来到橙心橙意工作室</text>
-    <text class="subtitle">原创不止，创意无限</text>
+    <image class="logo-img" src="/assets/icons/logo.svg" mode="aspectFit" />
+    <text class="title">登录</text>
+    <text class="welcome">欢迎回来!</text>
+    <view class="register-line">
+      <text class="register-tip">还没有账号? </text>
+      <text class="register-link" bindtap="handleRegister">即刻注册</text>
+    </view>
   </view>
 
-  <view class="card">
-    <button
-      class="wechat-btn"
-      loading="{{isLoggingIn}}"
-      disabled="{{!agreed || isLoggingIn}}"
-      bindtap="handleWechatLogin"
-    >
-      {{isLoggingIn ? "登录中..." : "微信一键登录"}}
-    </button>
+  <view class="form-card">
+    <text class="field-label">电话号码</text>
+    <view class="field-row">
+      <image class="field-icon" src="/assets/icons/手机号.svg" mode="aspectFit" />
+      <input
+        class="field-input"
+        type="text"
+        placeholder="+86 186 0323"
+        placeholder-class="placeholder"
+        value="{{phone}}"
+        cursor="{{phoneCursor}}"
+        bindinput="onPhoneInput"
+        bindfocus="onPhoneFocus"
+      />
+    </view>
 
-    <button
-      class="phone-btn"
-      open-type="getPhoneNumber"
-      bindgetphonenumber="handlePhoneBind"
-    >
-      绑定手机号（可选）
+    <text class="field-label password-label">密码</text>
+    <view class="field-row">
+      <image class="field-icon" src="/assets/icons/登录密码.svg" mode="aspectFit" />
+      <input
+        class="field-input"
+        password="{{!showPassword}}"
+        placeholder=""
+        placeholder-class="placeholder"
+        value="{{password}}"
+        bindinput="onPasswordInput"
+      />
+      <image
+        class="eye-icon"
+        src="/assets/icons/显示密码.svg"
+        mode="aspectFit"
+        bindtap="togglePassword"
+      />
+    </view>
+
+    <text class="forgot" bindtap="handleForgotPassword">忘记密码了?</text>
+
+    <button class="login-btn" loading="{{isLoggingIn}}" bindtap="handleAccountLogin">
+      {{isLoggingIn ? "登录中..." : "登录"}}
     </button>
 
     <view wx:if="{{errorMsg}}" class="error-box">
       <text>{{errorMsg}}</text>
-      <text class="retry" bindtap="handleWechatLogin">点击重试</text>
     </view>
   </view>
 
-  <view class="protocol">
-    <view class="agree-row">
-      <view class="checkbox {{agreed ? 'checked' : ''}}" bindtap="toggleAgreement">
-        <text wx:if="{{agreed}}" class="check-mark">√</text>
-      </view>
-      <view class="agree-text">
-        <text>我已阅读并同意 </text>
-        <text class="link" bindtap="goPrivacy">《隐私政策》</text>
-        <text> 与 </text>
-        <text class="link" bindtap="goAgreement">《用户协议》</text>
-      </view>
+  <view class="third-party">
+    <view class="line"></view>
+    <text class="third-text">第三方登录</text>
+    <view class="line"></view>
+  </view>
+
+  <view class="social-row">
+    <view class="social-btn" bindtap="handleQQLogin">
+      <image class="social-icon" src="/assets/icons/QQ(1).svg" mode="aspectFit" />
+    </view>
+    <view class="social-btn" bindtap="handleWechatLogin">
+      <image class="social-icon" src="/assets/icons/微信(1).svg" mode="aspectFit" />
     </view>
   </view>
 </view>

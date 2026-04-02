@@ -4,7 +4,10 @@ Page({
   data: {
     isLoggingIn: false,
     errorMsg: "",
-    agreed: false
+    phone: "+86 ",
+    phoneCursor: 4,
+    password: "",
+    showPassword: false
   },
 
   onShow() {
@@ -18,13 +21,6 @@ Page({
 
   handleWechatLogin() {
     if (this.data.isLoggingIn) return;
-    if (!this.data.agreed) {
-      wx.showToast({
-        title: "请先勾选并同意协议",
-        icon: "none"
-      });
-      return;
-    }
 
     this.setData({
       isLoggingIn: true,
@@ -83,6 +79,84 @@ Page({
     });
   },
 
+  onPhoneInput(e) {
+    const rawValue = e.detail.value || "";
+    const phoneDigits = this.extractPhoneDigits(rawValue);
+    const nextPhone = `+86 ${phoneDigits}`;
+
+    this.setData({
+      phone: nextPhone,
+      phoneCursor: nextPhone.length
+    });
+  },
+
+  onPhoneFocus() {
+    const currentPhone = this.data.phone || "+86 ";
+    const safePhone = currentPhone.startsWith("+86 ") ? currentPhone : "+86 ";
+    this.setData({
+      phone: safePhone,
+      phoneCursor: safePhone.length
+    });
+  },
+
+  onPasswordInput(e) {
+    this.setData({
+      password: e.detail.value
+    });
+  },
+
+  togglePassword() {
+    this.setData({
+      showPassword: !this.data.showPassword
+    });
+  },
+
+  handleAccountLogin() {
+    const { phone, password } = this.data;
+    const phoneDigits = this.extractPhoneDigits(phone);
+    if (!phoneDigits || phoneDigits.length !== 11 || !password) {
+      this.setData({
+        errorMsg: "请输入正确手机号和密码后再登录。"
+      });
+      return;
+    }
+
+    const authData = {
+      loggedIn: true,
+      userInfo: {
+        nickName: "普通用户"
+      },
+      phoneBound: true
+    };
+
+    wx.setStorageSync("auth", authData);
+    app.globalData.userInfo = authData.userInfo;
+    wx.reLaunch({
+      url: "/pages/home/home"
+    });
+  },
+
+  handleQQLogin() {
+    wx.showToast({
+      title: "QQ 登录暂未开放",
+      icon: "none"
+    });
+  },
+
+  handleRegister() {
+    wx.showToast({
+      title: "注册功能开发中",
+      icon: "none"
+    });
+  },
+
+  handleForgotPassword() {
+    wx.showToast({
+      title: "找回密码开发中",
+      icon: "none"
+    });
+  },
+
   handlePhoneBind(e) {
     if (e.detail.errMsg !== "getPhoneNumber:ok") {
       wx.showToast({
@@ -115,9 +189,9 @@ Page({
     });
   },
 
-  toggleAgreement() {
-    this.setData({
-      agreed: !this.data.agreed
-    });
+  extractPhoneDigits(value) {
+    const digits = (value || "").replace(/[^\d]/g, "");
+    const withoutCountryCode = digits.startsWith("86") ? digits.slice(2) : digits;
+    return withoutCountryCode.slice(0, 11);
   }
 });
