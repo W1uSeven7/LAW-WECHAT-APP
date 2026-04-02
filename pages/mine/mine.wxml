@@ -1,0 +1,5 @@
+<view class="mine-page">
+  <text class="title">我的页面</text>
+  <text class="desc">订单、收藏、地址、账号设置等模块将按 PRD 逐步接入。</text>
+  <button class="logout-btn" bindtap="logout">退出登录</button>
+</view>

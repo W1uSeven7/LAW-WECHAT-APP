@@ -1,0 +1,18 @@
+.doc {
+  min-height: 100vh;
+  padding: 52rpx 42rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 28rpx;
+}
+
+.content {
+  color: #b6c2d6;
+  font-size: 28rpx;
+  line-height: 1.85;
+}

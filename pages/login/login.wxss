@@ -1,0 +1,149 @@
+.container {
+  min-height: 100vh;
+  padding: 96rpx 48rpx 60rpx;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #0b1220 0%, #111d31 100%);
+}
+
+.hero {
+  margin-top: 56rpx;
+}
+
+.logo {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  border-radius: 999rpx;
+  background: rgba(62, 203, 255, 0.14);
+  color: #75d6ff;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
+
+.title {
+  display: block;
+  margin-top: 28rpx;
+  font-size: 52rpx;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.subtitle {
+  display: block;
+  margin-top: 16rpx;
+  color: #a2b0c5;
+  font-size: 28rpx;
+}
+
+.card {
+  margin-top: 110rpx;
+  padding: 42rpx 34rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+button {
+  border: 0;
+}
+
+.wechat-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  border-radius: 46rpx;
+  background: linear-gradient(135deg, #2bd36b 0%, #18b04f 100%);
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.phone-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  white-space: nowrap;
+  margin-top: 22rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  border-radius: 43rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.26);
+  background: transparent;
+  color: #dfebff;
+  font-size: 30rpx;
+}
+
+.error-box {
+  margin-top: 24rpx;
+  padding: 18rpx 22rpx;
+  border-radius: 14rpx;
+  background: rgba(255, 82, 82, 0.14);
+  color: #ffc5c5;
+  font-size: 25rpx;
+}
+
+.retry {
+  display: block;
+  margin-top: 8rpx;
+  color: #ffdede;
+  text-decoration: underline;
+}
+
+.protocol {
+  margin-top: 34rpx;
+  color: #90a0bc;
+  font-size: 24rpx;
+  line-height: 1.8;
+}
+
+.agree-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.checkbox {
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 4rpx;
+  margin-right: 14rpx;
+  border: 2rpx solid #90a0bc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checked {
+  border-color: #2bd36b;
+  background: rgba(43, 211, 107, 0.2);
+}
+
+.check-mark {
+  color: #2bd36b;
+  font-size: 24rpx;
+  line-height: 1;
+}
+
+.agree-text {
+  text-align: left;
+}
+
+.link {
+  color: #71d2ff;
+}
+
+.wechat-btn[disabled] {
+  background: #4d607d !important;
+  color: #ced7e6 !important;
+}

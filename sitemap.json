@@ -1,0 +1,9 @@
+{
+  "desc": "Law Wechat App Sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

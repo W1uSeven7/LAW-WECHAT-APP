@@ -1,0 +1,4 @@
+<view class="mall-page">
+  <text class="title">商城页面</text>
+  <text class="desc">商品列表、分类筛选、购物流程将按 PRD 逐步接入。</text>
+</view>

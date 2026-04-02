@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="hero">
+    <text class="logo">LAW STUDIO</text>
+    <text class="title">欢迎来到橙心橙意工作室</text>
+    <text class="subtitle">原创不止，创意无限</text>
+  </view>
+
+  <view class="card">
+    <button
+      class="wechat-btn"
+      loading="{{isLoggingIn}}"
+      disabled="{{!agreed || isLoggingIn}}"
+      bindtap="handleWechatLogin"
+    >
+      {{isLoggingIn ? "登录中..." : "微信一键登录"}}
+    </button>
+
+    <button
+      class="phone-btn"
+      open-type="getPhoneNumber"
+      bindgetphonenumber="handlePhoneBind"
+    >
+      绑定手机号（可选）
+    </button>
+
+    <view wx:if="{{errorMsg}}" class="error-box">
+      <text>{{errorMsg}}</text>
+      <text class="retry" bindtap="handleWechatLogin">点击重试</text>
+    </view>
+  </view>
+
+  <view class="protocol">
+    <view class="agree-row">
+      <view class="checkbox {{agreed ? 'checked' : ''}}" bindtap="toggleAgreement">
+        <text wx:if="{{agreed}}" class="check-mark">√</text>
+      </view>
+      <view class="agree-text">
+        <text>我已阅读并同意 </text>
+        <text class="link" bindtap="goPrivacy">《隐私政策》</text>
+        <text> 与 </text>
+        <text class="link" bindtap="goAgreement">《用户协议》</text>
+      </view>
+    </view>
+  </view>
+</view>

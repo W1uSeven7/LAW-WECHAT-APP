@@ -1,0 +1,42 @@
+<view class="home-page">
+  <view class="top-bar">
+    <view>
+      <text class="studio-name">LAW STUDIO</text>
+      <text class="studio-sub">漫画 · 游戏 · 视频 · 定制</text>
+    </view>
+    <view class="search-btn" bindtap="handleSearch">
+      <text class="search-icon">🔍</text>
+    </view>
+  </view>
+
+  <swiper class="banner-swiper" indicator-dots autoplay circular interval="3200">
+    <swiper-item wx:for="{{banners}}" wx:key="title">
+      <view class="banner-card" data-type="{{item.type}}" bindtap="handleBannerTap">
+        <text class="banner-tag">{{item.tag}}</text>
+        <text class="banner-title">{{item.title}}</text>
+        <text class="banner-desc">{{item.desc}}</text>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <view class="section-title">核心功能</view>
+  <view class="entry-grid">
+    <view
+      class="entry-item"
+      wx:for="{{entries}}"
+      wx:key="type"
+      data-type="{{item.type}}"
+      bindtap="handleEntryTap"
+    >
+      <view class="entry-icon">{{item.icon}}</view>
+      <text class="entry-name">{{item.name}}</text>
+      <text class="entry-intro">{{item.intro}}</text>
+    </view>
+  </view>
+
+  <button class="shop-btn" bindtap="goMall">进入商城</button>
+
+  <view class="ai-float" bindtap="openAI">
+    <text class="ai-text">AI 助手</text>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/mall/mall",
+    "pages/mine/mine",
+    "pages/protocol/privacy",
+    "pages/protocol/agreement"
+  ],
+  "tabBar": {
+    "color": "#8da1bf",
+    "selectedColor": "#3ecbff",
+    "backgroundColor": "#0f1b2d",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTitleText": "Law Studio",
+    "navigationBarBackgroundColor": "#0e1a2b",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#0b1220",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

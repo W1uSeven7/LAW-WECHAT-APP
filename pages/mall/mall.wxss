@@ -1,0 +1,20 @@
+.mall-page {
+  min-height: 100vh;
+  padding: 52rpx 36rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  display: block;
+  font-size: 42rpx;
+  font-weight: 700;
+  color: #f3f8ff;
+}
+
+.desc {
+  display: block;
+  margin-top: 18rpx;
+  color: #a3b5ce;
+  font-size: 28rpx;
+  line-height: 1.7;
+}
